@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <netinet/in.h>
 #include <pthread.h>
-//#include "command_handler.h" 
+#include "../include/command_handler.h" 
 #include "../include/server.h"
 #define PORT 6379
 #define BUFFER_SIZE 1024
@@ -20,10 +20,10 @@ void* handle_client(void* arg) {
         memset(buffer, 0, BUFFER_SIZE);
         int bytes_read = read(client_socket, buffer, BUFFER_SIZE - 1);
         if (bytes_read <= 0) break;
-        fwrite(buffer,1,bytes_read,stdout);
-        //char* response = handle_command(buffer); 
-        //write(client_socket, response, strlen(response));
-        //free(response);  
+        //fwrite(buffer,1,bytes_read,stdout);
+        char* response = handle_command(buffer); 
+        write(client_socket, response, strlen(response));
+        free(response);  
     }
 
     close(client_socket);
