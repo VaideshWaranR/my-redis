@@ -9,6 +9,13 @@
 #define PORT 6379
 #define BUFFER_SIZE 1024
 
+void trim_newline(char* str) {
+    size_t len = strlen(str);
+    while (len > 0 && (str[len - 1] == '\n' || str[len - 1] == '\r')) {
+        str[len - 1] = '\0';
+        len--;
+    }
+}
 
 void* handle_client(void* arg) {
     int client_socket = *(int*)arg;
@@ -21,9 +28,15 @@ void* handle_client(void* arg) {
         int bytes_read = read(client_socket, buffer, BUFFER_SIZE - 1);
         if (bytes_read <= 0) break;
         //fwrite(buffer,1,bytes_read,stdout);
-        char* response = handle_command(buffer); 
-        write(client_socket, response, strlen(response));
-        free(response);  
+	char* response = handle_command(buffer);
+	trim_newline(response);
+	strcat(response,"\n");
+	write(client_socket, response, strlen(response));
+        if(strncmp(response,"Goodbye",7)==0){
+	       free(response);
+       	       break;
+	}
+	free(response);  
     }
 
     close(client_socket);
