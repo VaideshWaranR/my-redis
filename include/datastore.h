@@ -8,6 +8,6 @@ bool delete_key(const char* key);
 void free_store();
 void save_data(const char *filename);
 void load_data(const char *filename);
-
+bool key_exist(const char *key);
 #endif
 
