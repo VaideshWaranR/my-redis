@@ -68,6 +68,11 @@ char* handle_command(char *input) {
 	    load_data("../data/data.db");
 	    return strdup("OK");
     }
+    else if(strcmp(tokens[0],"exists")==0){
+	    if(token_count!=2) return strdup("ERROR: Usage: EXISTS key\n");
+	    if(key_exist(tokens[1])) return strdup("1");
+			    return strdup("0");
+    }
     else {
         return strdup("ERROR: Unknown command\n");
     }

@@ -77,4 +77,8 @@ void free_store() {
         free(entry);
     }
 }
-
+bool key_exist(const char *key){
+	KVPair *found;
+        HASH_FIND_STR(store, key, found); 
+        return found != NULL;
+}
