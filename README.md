@@ -2,14 +2,15 @@
 
 A lightweight, Redis-inspired key-value store implementation written in C. This project provides an in-memory database server that supports basic Redis commands over TCP connections.
 
-┌─────────────────────────────────────────────────────────────┐
-│                    Development Environment                  │
-├─────────────────────────────────────────────────────────────┤
-│  📝 vim      →  Code editor of choice                       │
-│  ⚡ C        →  Pure system programming language            │
-│  🪟 tmux     →  Terminal multiplexer for workflow           │
-│  🔌 telnet   →  Testing TCP connections                     │
-└─────────────────────────────────────────────────────────────┘
+### 🛠️ **The Arsenal**
+
+| Tool | Purpose | Why It's Essential |
+|------|---------|-------------------|
+| **Vim** 📝 | Code Editor Supreme | *"The editor that adapts to your mind, not the other way around"* |
+| **C** ⚙️ | Programming Language | *Pure performance, minimal overhead, maximum control* |
+| **tmux** 🖥️ | Terminal Multiplexer | *Multiple sessions, persistent workflows, terminal zen* |
+| **telnet** 🌐 | Network Protocol | *Raw network communication, old school reliability* |
+
 ## Features
 
 - **In-memory storage**: Fast key-value pair storage in RAM
