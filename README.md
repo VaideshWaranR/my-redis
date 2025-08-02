@@ -2,6 +2,14 @@
 
 A lightweight, Redis-inspired key-value store implementation written in C. This project provides an in-memory database server that supports basic Redis commands over TCP connections.
 
+┌─────────────────────────────────────────────────────────────┐
+│                    Development Environment                  │
+├─────────────────────────────────────────────────────────────┤
+│  📝 vim      →  Code editor of choice                       │
+│  ⚡ C        →  Pure system programming language            │
+│  🪟 tmux     →  Terminal multiplexer for workflow           │
+│  🔌 telnet   →  Testing TCP connections                     │
+└─────────────────────────────────────────────────────────────┘
 ## Features
 
 - **In-memory storage**: Fast key-value pair storage in RAM
